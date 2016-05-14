@@ -1,7 +1,7 @@
 FROM centos:7
 
 USER root
-
+EXPOSE 3000
 # Change mirrors
 RUN yum install wget -y
 # RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
@@ -24,4 +24,6 @@ RUN source $HOME/.bashrc && npm install -g agentx
 RUN git clone https://github.com/aliyun-node/commands.git /usr/local/src/alinode_commands
 
 COPY docker-entrypoint.sh /
+RUN mkdir /web
+COPY time.js /web
 ENTRYPOINT ["/docker-entrypoint.sh"]
