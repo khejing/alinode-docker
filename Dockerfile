@@ -11,11 +11,11 @@ RUN yum install wget -y
 RUN yum install curl git python tree gcc gcc-c++ make openssl-devel -y
 
 ENV HOME /root
-ENV ALINODE_VERSION 1.2.2
+# alinode v1.5.5 (node 4.4.4)
+ENV ALINODE_VERSION 1.5.5
 ENV TNVM_DIR /root/.tnvm
 RUN mkdir /tmp/node_log
 
-# Install alinode v1.1.0 (node 4.2.2)
 RUN wget -qO- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash 
 RUN source $HOME/.bashrc && \
         tnvm install "alinode-v$ALINODE_VERSION" && \
