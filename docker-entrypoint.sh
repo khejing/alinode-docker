@@ -19,7 +19,7 @@ if [ "$APP_ID" != "" ] && [ "$APP_SECRET" != "" ]; then
         \"error_log\": [" > /.agentx.json
 
     if [ "$AGENTX_ERROR_LOG" != "" ]; then
-        echo '"$AGENTX_ERROR_LOG"' >> /.agentx.json
+        echo "$AGENTX_ERROR_LOG" >> /.agentx.json
     fi
     
     echo -e "]\n
