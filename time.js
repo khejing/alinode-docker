@@ -4,7 +4,7 @@ setInterval(function(){
 		console.log("i is "+i);
 	}
 	if(i % 10 === 0){
-		abd
+		console.error("error happend");
 	}
 	i++;
 }, 1000);
